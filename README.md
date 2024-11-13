@@ -3,7 +3,7 @@
 This is a demo project for attribute, this project was build with next using CSR
 
 ## How to run the app
-
+Make sure to use node 18 or later
 ```bash
 npm run dev
 # or
@@ -22,7 +22,7 @@ Of course there is a lot to add to the app in order to make it prod ready, liste
 
 ## Security
 1. Convert HTTP to HTTPS - provide a more secure and communication protocol to prevent MIM attacks data sniffing and more.
-2. Using refresh and authorization tokens, if more security is needed add a logging that will result in a refresh token cookie and an short timespan access token that actually let app users make requests. 
+2. Using refresh and authorization tokens, if more security is needed - Add a logging that will result in a refresh token cookie and an short timespan access token that actually let app users make requests. 
 after logging in the client side will get a new access token using the refresh token cookie every 10-15 minutes.  
 3. Add CSP file - we should tightly control what network requests and assets the client can request from external vendors (getting fonts, monitoring and logging services, accessing CDN, etc...)
 4. Using a schema library - adding a library like zod to make sure the data remain valid on transfers.
