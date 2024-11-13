@@ -9,6 +9,7 @@ import {WeatherData, WeatherDataResponse} from "@/types/weather";
 import {fetchWeatherData} from '../../services/weatherService'
 import {TempChart} from './components/tempChart/tempChart';
 import { validateDateRange } from '@/utils/date';
+import { Errors } from '@/consts/errorsClient'
 
 export const WeatherControl = ({className}: WeatherControlProps) => {
     const [isError, setIsError] = useState<boolean>(false);
@@ -64,7 +65,7 @@ export const WeatherControl = ({className}: WeatherControlProps) => {
         try {
             if (!validateDateRange(start, end)) {
                 setIsError(true);
-                setErrorMessage("Please make sure that both dates are valid and the 'From' date is prior to the 'To' date and none is in the future.");
+                setErrorMessage(Errors.DATE_RANGE_ERROR);
                 return;
             }
 
@@ -77,7 +78,7 @@ export const WeatherControl = ({className}: WeatherControlProps) => {
         } catch (error) {
             console.error('Error fetching weather data:', error);
             setIsError(true);
-            setErrorMessage("It seems that we are experiencing technical difficulties. Please try again later.");
+            setErrorMessage(Errors.SERVER_ERROR);
         }
     };
 

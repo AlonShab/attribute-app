@@ -34,6 +34,6 @@ after logging in the client side will get a new access token using the refresh t
 4. Moving middlewares to separate functions and wrapping handlers in high order functions that use the middlewares instead of calling them directly from the handler
 5. Debouncing and throttling requests - for performance we can prevent many requests if we debounce many requests that come at once and throttle requests (lets say 300ms) and prevent malicious actors from abusing API.
 6. Adding responsive design - applying mobile-first styling that will use media queries to also support desktops, mobiles are the default as they are the vast majority of user devices.
-7. Adding const files - error messages files for client & server and so on.. 
-8. Optional - limit date-range - if product department approves we can limit (1 month, 1 year, 10 years, etc) the date range in order to insure max performance 
-9. Optional - Adding session monitoring - aside from using regular logging I'd like to add a session replay ability using DataDog for instance which will provided a lot of utility when monitoring, finding and fixing bugs. also while there are other logging more dedicated to app usage tracking like mix panel we can use it to see how much traffic is in the app in any given time
+7. Create an MetroAPI service - handle all metro API from a dedicated service and not from api/weather.
+8. Optional - Adding session monitoring - aside from using regular logging I'd like to add a session replay ability using DataDog for instance which will provided a lot of utility when monitoring, finding and fixing bugs. also while there are other logging more dedicated to app usage tracking like mix panel we can use it to see how much traffic is in the app in any given time 
+9. Optional - limit date-range - if product department approves we can limit (1 month, 1 year, 10 years, etc) the date range in order to insure max performance
